@@ -4,6 +4,8 @@ A powerful server monitoring and management desktop application built with Tauri
 
 **[English](#english) | [Русский](#русский)**
 
+![Логотип](others/1.png)
+
 ---
 
 ## English
