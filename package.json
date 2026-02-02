@@ -1,0 +1,19 @@
+{
+  "name": "server-watcher",
+  "private": true,
+  "version": "0.4.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd web-ui && npm run dev",
+    "build": "cd web-ui && npm run build",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.9.1",
+    "@tauri-apps/plugin-dialog": "^2.6.0",
+    "@tauri-apps/plugin-fs": "^2.4.5"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}

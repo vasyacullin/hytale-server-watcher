@@ -1,0 +1,88 @@
+{
+  "server": {
+    "executable": "java",
+    "arguments": [
+      "-Xms4G",
+      "-Xmx36G",
+      "-XX:+UseZGC",
+      "-XX:+ZGenerational",
+      "-XX:+ZUncommit",
+      "-XX:ZUncommitDelay=120",
+      "-XX:+DisableExplicitGC",
+      "-XX:+PerfDisableSharedMem",
+      "-XX:MaxMetaspaceSize=512M",
+      "-XX:+HeapDumpOnOutOfMemoryError",
+      "-XX:HeapDumpPath=./crash_dumps/",
+      "-jar",
+      "HytaleServer.jar",
+      "--assets",
+      "C:\\Users\\deadzi\\Desktop\\11\\Assets.zip",
+      "--auth-mode",
+      "offline",
+      "--accept-early-plugins"
+    ],
+    "working_directory": null,
+    "restart_delay_seconds": 30,
+    "max_restarts": null
+  },
+  "telegram": {
+    "enabled": false,
+    "token": "YOUR_BOT_TOKEN",
+    "chat_id": "YOUR_CHAT_ID"
+  },
+  "resources": {
+    "cpu_threshold_percent": 90.0,
+    "memory_threshold_mb": 32000,
+    "check_interval_seconds": 5
+  },
+  "error_patterns": {
+    "critical": [
+      "FATAL",
+      "Fatal error",
+      "Server crashed",
+      "OutOfMemoryError",
+      "StackOverflowError",
+      "Access violation",
+      "Unhandled exception",
+      "Critical error",
+      "JVM has crashed",
+      "A fatal error has been detected",
+      "EXCEPTION_ACCESS_VIOLATION"
+    ],
+    "errors": [
+      "ERROR",
+      "Exception",
+      "Failed to",
+      "Unable to",
+      "Connection lost",
+      "Disconnected",
+      "Timeout",
+      "NullPointerException",
+      "IndexOutOfBoundsException",
+      "IllegalStateException",
+      "IllegalArgumentException",
+      "IOException",
+      "Could not load",
+      "Failed to load",
+      "Authentication failed",
+      "World save failed",
+      "Chunk loading error"
+    ],
+    "warnings": [
+      "WARN",
+      "Warning",
+      "Deprecated",
+      "Slow tick",
+      "Can't keep up",
+      "Skipping tick",
+      "High memory usage",
+      "Running behind"
+    ]
+  },
+  "restart_on": {
+    "critical": true,
+    "errors": false,
+    "warnings": false,
+    "process_exit": true
+  }
+}
